@@ -1,0 +1,43 @@
+{
+  "name": "chatgpt-app",
+  "version": "0.0.1",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "npm run dev:http",
+    "dev:http": "nodemon --watch server/src --exec tsx server/src/index.ts",
+    "dev:stdio": "nodemon --watch server/src --exec tsx server/src/index.ts -- --stdio",
+    "build": "npm run build:server && npm run build:web",
+    "build:server": "esbuild server/src/index.ts --bundle --platform=node --format=esm --packages=external --outfile=dist/server/index.js",
+    "build:web": "vite build",
+    "start": "npm run start:http",
+    "start:http": "node dist/server/index.js",
+    "start:stdio": "node dist/server/index.js --stdio",
+    "test": "vitest run",
+    "test:watch": "vitest",
+    "test:ui": "vitest --ui"
+  },
+  "dependencies": {
+    "@modelcontextprotocol/sdk": "^1.25.2",
+    "@openai/apps-sdk-ui": "^0.2.1",
+    "express": "^5.2.1",
+    "react": "^19.2.3",
+    "react-dom": "^19.2.3"
+  },
+  "devDependencies": {
+    "@tailwindcss/vite": "^4.0.0",
+    "@types/express": "^5.0.6",
+    "@types/node": "^25.0.10",
+    "@types/react": "^19.2.9",
+    "@types/react-dom": "^19.2.3",
+    "@vitejs/plugin-react": "^5.2.0",
+    "@vitest/ui": "^2.1.8",
+    "esbuild": "^0.25.0",
+    "nodemon": "^3.1.11",
+    "tailwindcss": "^4.0.0",
+    "tsx": "^4.21.0",
+    "typescript": "^5.9.3",
+    "vite": "^7.3.1",
+    "vitest": "^2.1.8"
+  }
+}

@@ -1,0 +1,318 @@
+/* =============================================================================
+   ChatGPT Apps SDK UI Styles
+   
+   This file sets up the design system for your widget:
+   - Tailwind CSS v4 utilities
+   - OpenAI Apps SDK UI design tokens and component styles
+   - ChatGPT-native dark mode support
+   ============================================================================= */
+
+@import "tailwindcss";
+@import "@openai/apps-sdk-ui/css";
+
+/* Required for Tailwind to find class references in Apps SDK UI components. */
+@source "../../../node_modules/@openai/apps-sdk-ui";
+
+/* =============================================================================
+   Custom Styles (add your own below)
+   ============================================================================= */
+
+/* Widget container defaults */
+.widget-container {
+  @apply p-4 min-h-[100px];
+}
+
+/* Card pattern - use for inline display mode */
+.widget-card {
+  @apply rounded-2xl border border-default bg-surface shadow-lg p-4;
+}
+
+/* List item pattern */
+.widget-list-item {
+  @apply flex items-center gap-3 p-3 border-b border-subtle last:border-b-0 hover:bg-surface-secondary transition-colors;
+}
+
+/* Empty state pattern */
+.widget-empty {
+  @apply flex flex-col items-center justify-center text-center p-8 text-secondary;
+}
+
+/* Development mode notice */
+.widget-dev-notice {
+  @apply p-4 rounded-xl border border-subtle bg-surface-secondary text-center;
+}
+
+/* =============================================================================
+   Stripe Pricing Widget Styles
+   ============================================================================= */
+
+/* Header */
+.stripe-header {
+  @apply flex items-center justify-between gap-3 mb-0 pb-3 border-b border-subtle;
+}
+
+.stripe-header-left {
+  @apply flex items-center gap-2;
+}
+
+.stripe-logo-lockup {
+  @apply flex items-center gap-2;
+}
+
+.stripe-logo {
+  @apply h-5 w-auto;
+  color: #635BFF;
+}
+
+.stripe-header-title {
+  @apply font-semibold text-base;
+}
+
+.stripe-header-actions {
+  @apply flex items-center gap-2;
+}
+
+/* Tabs */
+.stripe-tabs {
+  @apply flex gap-1 pt-3 pb-1;
+}
+
+.stripe-tab {
+  @apply px-3 py-1.5 rounded-lg text-sm font-medium transition-colors;
+  @apply text-secondary;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+}
+
+.stripe-tab:hover {
+  @apply bg-surface-secondary;
+}
+
+.stripe-tab--active {
+  @apply bg-surface-secondary font-semibold;
+  color: inherit;
+}
+
+/* Body */
+.stripe-body {
+  @apply pt-3 flex flex-col gap-4;
+}
+
+/* Plans grid */
+.stripe-plans-grid {
+  @apply grid gap-3;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+}
+
+/* Plan card */
+.stripe-plan-card {
+  @apply relative rounded-2xl border border-default bg-surface p-4 flex flex-col gap-3;
+}
+
+.stripe-plan-card--highlight {
+  border-color: #635BFF;
+}
+
+.stripe-plan-badge {
+  @apply absolute top-3 right-3 rounded-full px-2 py-0.5 text-xs font-semibold;
+  background: #635BFF;
+  color: #fff;
+}
+
+.stripe-plan-header {
+  @apply flex flex-col gap-0.5;
+}
+
+.stripe-plan-name {
+  @apply font-semibold text-base;
+}
+
+.stripe-plan-tagline {
+  @apply text-sm text-secondary;
+}
+
+.stripe-plan-price {
+  @apply flex flex-col gap-0.5;
+}
+
+.stripe-plan-price-value {
+  @apply text-xl font-bold;
+}
+
+.stripe-plan-price-sub {
+  @apply text-xs text-secondary;
+}
+
+.stripe-plan-features {
+  @apply flex flex-col gap-1.5 flex-1;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.stripe-plan-feature-item {
+  @apply flex items-start gap-2 text-sm;
+}
+
+.stripe-check-icon {
+  @apply size-4 mt-0.5 shrink-0;
+  color: #635BFF;
+}
+
+.stripe-cross-icon {
+  @apply size-4 mt-0.5 shrink-0;
+  color: #999;
+}
+
+.stripe-ext-icon {
+  @apply size-3.5 shrink-0;
+  opacity: 0.7;
+}
+
+/* CTA buttons */
+.stripe-cta-btn {
+  @apply mt-auto flex items-center justify-center gap-1.5 w-full rounded-lg py-2 px-4 text-sm font-medium transition-colors cursor-pointer;
+  border: none;
+}
+
+.stripe-cta-btn--primary {
+  background: #635BFF;
+  color: #fff;
+}
+
+.stripe-cta-btn--primary:hover {
+  background: #5145e8;
+}
+
+.stripe-cta-btn--secondary {
+  @apply bg-surface-secondary border border-default;
+}
+
+.stripe-cta-btn--secondary:hover {
+  @apply bg-surface;
+}
+
+/* Fee table */
+.stripe-fee-section {
+  @apply flex flex-col gap-2;
+}
+
+.stripe-section-title {
+  @apply text-sm font-semibold text-secondary uppercase tracking-wide;
+}
+
+.stripe-fee-table {
+  @apply rounded-xl border border-default overflow-hidden;
+}
+
+.stripe-fee-row {
+  @apply flex items-center justify-between gap-4 px-3 py-2.5 border-b border-subtle last:border-b-0;
+  @apply text-sm;
+}
+
+.stripe-fee-label {
+  @apply flex-1;
+}
+
+.stripe-fee-right {
+  @apply flex flex-col items-end;
+}
+
+.stripe-fee-rate {
+  @apply font-semibold;
+}
+
+.stripe-fee-note {
+  @apply text-xs text-secondary;
+}
+
+/* Comparison table */
+.stripe-compare {
+  @apply rounded-xl border border-default overflow-hidden;
+}
+
+.stripe-compare-header {
+  @apply grid bg-surface-secondary;
+}
+
+.stripe-compare-header-empty {
+  @apply p-3 border-b border-subtle border-r border-subtle;
+}
+
+.stripe-compare-plan-col {
+  @apply p-3 border-b border-subtle text-center;
+}
+
+.stripe-compare-plan-col--highlight {
+  border-top: 2px solid #635BFF;
+}
+
+.stripe-compare-plan-name {
+  @apply font-semibold text-sm;
+}
+
+.stripe-compare-plan-price {
+  @apply text-xs text-secondary mt-0.5;
+}
+
+.stripe-compare-body {
+  @apply divide-y;
+  divide-color: var(--color-border-subtle, rgba(0,0,0,0.06));
+}
+
+.stripe-compare-row {
+  @apply grid items-center;
+}
+
+.stripe-compare-feature {
+  @apply p-3 text-sm border-r border-subtle;
+}
+
+.stripe-compare-cell {
+  @apply flex items-center justify-center p-3;
+}
+
+.stripe-compare-cell--yes {
+  color: #635BFF;
+}
+
+.stripe-compare-cell--no {
+  @apply text-secondary;
+  opacity: 0.4;
+}
+
+/* Product highlights */
+.stripe-highlights-section {
+  @apply flex flex-col gap-2;
+}
+
+.stripe-highlights-grid {
+  @apply grid gap-2;
+  grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
+}
+
+.stripe-highlight-card {
+  @apply rounded-xl border border-default bg-surface p-3 flex flex-col gap-1 cursor-pointer text-left transition-colors;
+  @apply hover:bg-surface-secondary;
+  border: none;
+}
+
+.stripe-highlight-title {
+  @apply font-medium text-sm;
+}
+
+.stripe-highlight-desc {
+  @apply text-xs text-secondary leading-relaxed;
+}
+
+/* Source link */
+.stripe-source-link {
+  @apply flex items-center gap-1 text-xs text-secondary mt-1 self-start;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.stripe-source-link:hover {
+  text-decoration: underline;
+}

@@ -1,0 +1,247 @@
+/* =============================================================================
+   ChatGPT Apps SDK UI Styles
+
+   This file sets up the design system for your widget:
+   - Tailwind CSS v4 utilities
+   - OpenAI Apps SDK UI design tokens and component styles
+   - ChatGPT-native dark mode support
+   ============================================================================= */
+
+@import "tailwindcss";
+@import "@openai/apps-sdk-ui/css";
+
+/* Required for Tailwind to find class references in Apps SDK UI components. */
+@source "../../../node_modules/@openai/apps-sdk-ui";
+
+/* =============================================================================
+   Custom Styles
+   ============================================================================= */
+
+/* Widget container defaults */
+.widget-container {
+  @apply p-4 min-h-[100px];
+}
+
+/* Card pattern - use for inline display mode */
+.widget-card {
+  @apply rounded-2xl border border-default bg-surface shadow-lg p-4;
+}
+
+/* List item pattern */
+.widget-list-item {
+  @apply flex items-center gap-3 p-3 border-b border-subtle last:border-b-0 hover:bg-surface-secondary transition-colors;
+}
+
+/* Empty state pattern */
+.widget-empty {
+  @apply flex flex-col items-center justify-center text-center p-8 text-secondary;
+}
+
+/* Development mode notice */
+.widget-dev-notice {
+  @apply p-4 rounded-xl border border-subtle bg-surface-secondary text-center;
+}
+
+/* =============================================================================
+   Starbucks-specific Styles
+   ============================================================================= */
+
+/* Header */
+.sbux-header {
+  @apply flex items-center justify-between gap-3 mb-4;
+}
+
+.sbux-header-brand {
+  @apply flex items-center gap-2;
+}
+
+/* Category tabs */
+.category-tabs {
+  @apply flex gap-2 flex-wrap mb-3;
+}
+
+.category-tab {
+  @apply px-3 py-1 rounded-full text-sm border border-subtle bg-surface-secondary transition-colors;
+  cursor: pointer;
+}
+
+.category-tab:hover {
+  @apply bg-surface-secondary;
+}
+
+.category-tab--active {
+  background-color: #00704A;
+  color: white;
+  border-color: #00704A;
+}
+
+/* Item count */
+.menu-count {
+  @apply text-xs mb-3;
+}
+
+/* Menu grid */
+.menu-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
+  gap: 12px;
+  margin-bottom: 16px;
+}
+
+/* Menu card */
+.menu-card {
+  @apply rounded-xl border border-default bg-surface flex flex-col overflow-hidden;
+  transition: box-shadow 0.15s ease;
+}
+
+.menu-card:hover {
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.12);
+}
+
+.menu-card-image-wrapper {
+  width: 100%;
+  aspect-ratio: 1 / 1;
+  overflow: hidden;
+  background: #f5f5f0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.menu-card-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.menu-card-image-fallback {
+  @apply flex items-center justify-center w-full h-full bg-surface-secondary;
+}
+
+.menu-card-body {
+  @apply p-2 flex flex-col gap-1 flex-1;
+}
+
+.menu-card-name {
+  font-size: 0.8rem;
+  font-weight: 600;
+  line-height: 1.3;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+.menu-card-action {
+  @apply text-xs px-2 py-1.5 border-t border-subtle text-center transition-colors;
+  cursor: pointer;
+  background: none;
+  color: #00704A;
+  font-weight: 600;
+}
+
+.menu-card-action:hover {
+  background-color: #00704A;
+  color: white;
+}
+
+/* Loading state */
+.menu-loading {
+  @apply flex items-center justify-center py-12;
+}
+
+.menu-loading-spinner {
+  width: 32px;
+  height: 32px;
+  border: 3px solid #e5e7eb;
+  border-top-color: #00704A;
+  border-radius: 50%;
+  animation: spin 0.8s linear infinite;
+}
+
+@keyframes spin {
+  to { transform: rotate(360deg); }
+}
+
+/* Detail panel */
+.detail-panel {
+  @apply flex flex-col gap-4;
+}
+
+.detail-back {
+  @apply text-sm font-medium px-0 py-1 self-start;
+  cursor: pointer;
+  background: none;
+  border: none;
+  color: #00704A;
+}
+
+.detail-back:hover {
+  opacity: 0.75;
+}
+
+.detail-content {
+  @apply flex gap-4;
+  flex-wrap: wrap;
+}
+
+.detail-image-wrapper {
+  width: 120px;
+  height: 120px;
+  border-radius: 12px;
+  overflow: hidden;
+  flex-shrink: 0;
+  background: #f5f5f0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.detail-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.detail-image-fallback {
+  @apply flex items-center justify-center w-full h-full bg-surface-secondary;
+}
+
+.detail-info {
+  @apply flex flex-col gap-2 flex-1;
+  min-width: 160px;
+}
+
+.detail-title {
+  font-size: 1.1rem;
+  font-weight: 700;
+  line-height: 1.3;
+}
+
+.detail-actions {
+  @apply flex gap-2 flex-wrap mt-1;
+}
+
+/* Error banner */
+.error-banner {
+  @apply rounded-lg px-3 py-2 mb-3 text-sm border border-subtle bg-surface-secondary text-secondary;
+}
+
+/* Footer */
+.sbux-footer {
+  @apply pt-3 border-t border-subtle;
+}
+
+.sbux-footer-link {
+  @apply text-xs;
+  cursor: pointer;
+  background: none;
+  border: none;
+  padding: 0;
+  color: #00704A;
+  font-weight: 500;
+}
+
+.sbux-footer-link:hover {
+  opacity: 0.75;
+}

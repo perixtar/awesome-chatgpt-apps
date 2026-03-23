@@ -1,0 +1,300 @@
+/* =============================================================================
+   ChatGPT Apps SDK UI Styles
+   
+   This file sets up the design system for your widget:
+   - Tailwind CSS v4 utilities
+   - OpenAI Apps SDK UI design tokens and component styles
+   - ChatGPT-native dark mode support
+   ============================================================================= */
+
+@import "tailwindcss";
+@import "@openai/apps-sdk-ui/css";
+
+/* Required for Tailwind to find class references in Apps SDK UI components. */
+@source "../../../node_modules/@openai/apps-sdk-ui";
+
+/* =============================================================================
+   Custom Styles (add your own below)
+   ============================================================================= */
+
+/* Widget container defaults */
+.widget-container {
+  @apply p-4 min-h-[100px];
+}
+
+/* Card pattern - use for inline display mode */
+.widget-card {
+  @apply rounded-2xl border border-default bg-surface shadow-lg p-4;
+}
+
+/* List item pattern */
+.widget-list-item {
+  @apply flex items-center gap-3 p-3 border-b border-subtle last:border-b-0 hover:bg-surface-secondary transition-colors;
+}
+
+/* Empty state pattern */
+.widget-empty {
+  @apply flex flex-col items-center justify-center text-center p-8 text-secondary;
+}
+
+/* Development mode notice */
+.widget-dev-notice {
+  @apply p-4 rounded-xl border border-subtle bg-surface-secondary text-center;
+}
+
+/* =============================================================================
+   Cats.com Article Explorer Widget Styles
+   ============================================================================= */
+
+/* Header */
+.cats-widget {
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+}
+
+.cats-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 16px;
+  padding-bottom: 12px;
+  border-bottom: 1px solid;
+  @apply border-subtle;
+}
+
+.cats-header-left {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.cats-logo {
+  font-size: 24px;
+  line-height: 1;
+}
+
+.cats-title {
+  margin: 0;
+  line-height: 1.2;
+}
+
+.cats-subtitle {
+  font-size: 13px;
+  margin: 2px 0 0;
+}
+
+/* Article Grid */
+.article-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 14px;
+}
+
+@media (max-width: 520px) {
+  .article-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* Article Card */
+.article-card {
+  @apply rounded-xl border border-default bg-surface;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  transition: box-shadow 0.15s ease, transform 0.15s ease;
+}
+
+.article-card:hover {
+  box-shadow: 0 4px 16px rgba(0,0,0,0.10);
+  transform: translateY(-2px);
+}
+
+/* Image */
+.article-img-wrap {
+  position: relative;
+  height: 140px;
+  overflow: hidden;
+  flex-shrink: 0;
+}
+
+.article-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.article-img-placeholder {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Content */
+.article-content {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  padding: 12px;
+  flex: 1;
+}
+
+/* Category Badge */
+.article-badge {
+  display: inline-block;
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.02em;
+  padding: 2px 8px;
+  border-radius: 20px;
+  align-self: flex-start;
+  white-space: nowrap;
+  max-width: 100%;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+/* Title */
+.article-title {
+  font-size: 14px;
+  font-weight: 700;
+  line-height: 1.35;
+  margin: 0;
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+/* Author */
+.article-author {
+  font-size: 12px;
+  margin: 0;
+}
+
+/* Read More */
+.article-read-more {
+  margin-top: auto;
+  background: none;
+  border: none;
+  padding: 0;
+  cursor: pointer;
+  font-size: 13px;
+  font-weight: 600;
+  color: #FF6B35;
+  text-align: left;
+  text-decoration: underline;
+  text-underline-offset: 2px;
+}
+
+.article-read-more:hover {
+  color: #e55a22;
+}
+
+/* Empty state */
+.cats-empty {
+  min-height: 180px;
+  gap: 8px;
+}
+
+.cats-empty-icon {
+  font-size: 36px;
+  line-height: 1;
+  margin-bottom: 4px;
+}
+
+.cats-empty-title {
+  font-size: 16px;
+  font-weight: 700;
+  margin: 0;
+}
+
+.cats-empty-desc {
+  font-size: 13px;
+  margin: 0;
+  max-width: 260px;
+}
+
+.cats-browse-btn {
+  margin-top: 8px;
+  background: #FF6B35;
+  color: #fff;
+  border: none;
+  border-radius: 8px;
+  padding: 8px 18px;
+  font-size: 13px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.15s ease;
+}
+
+.cats-browse-btn:hover {
+  background: #e55a22;
+}
+
+/* Footer */
+.cats-footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: 14px;
+  padding-top: 12px;
+  border-top: 1px solid;
+  @apply border-subtle;
+  font-size: 12px;
+}
+
+.cats-footer-link {
+  color: #FF6B35;
+  text-decoration: none;
+  font-weight: 600;
+}
+
+.cats-footer-link:hover {
+  text-decoration: underline;
+}
+
+/* Skeleton loader */
+.skeleton-card {
+  pointer-events: none;
+}
+
+@keyframes skeleton-pulse {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.4; }
+}
+
+.skeleton-img {
+  height: 140px;
+  @apply bg-surface-secondary;
+  animation: skeleton-pulse 1.4s ease-in-out infinite;
+}
+
+.skeleton-badge {
+  height: 18px;
+  width: 80px;
+  border-radius: 20px;
+  @apply bg-surface-secondary;
+  animation: skeleton-pulse 1.4s ease-in-out infinite;
+}
+
+.skeleton-title {
+  height: 14px;
+  border-radius: 4px;
+  @apply bg-surface-secondary;
+  animation: skeleton-pulse 1.4s ease-in-out infinite;
+}
+
+.skeleton-title-short {
+  width: 60%;
+}
+
+.skeleton-author {
+  height: 12px;
+  width: 50%;
+  border-radius: 4px;
+  @apply bg-surface-secondary;
+  animation: skeleton-pulse 1.4s ease-in-out infinite;
+}

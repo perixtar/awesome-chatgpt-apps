@@ -1,0 +1,177 @@
+/* =============================================================================
+   ChatGPT Apps SDK UI Styles
+   
+   This file sets up the design system for your widget:
+   - Tailwind CSS v4 utilities
+   - OpenAI Apps SDK UI design tokens and component styles
+   - ChatGPT-native dark mode support
+   ============================================================================= */
+
+@import "tailwindcss";
+@import "@openai/apps-sdk-ui/css";
+
+/* Required for Tailwind to find class references in Apps SDK UI components. */
+@source "../../../node_modules/@openai/apps-sdk-ui";
+
+/* =============================================================================
+   Custom Styles (add your own below)
+   ============================================================================= */
+
+/* Widget container defaults */
+.widget-container {
+  @apply p-4 min-h-[100px];
+}
+
+/* Card pattern - use for inline display mode */
+.widget-card {
+  @apply rounded-2xl border border-default bg-surface shadow-lg p-4;
+}
+
+/* List item pattern */
+.widget-list-item {
+  @apply flex items-center gap-3 p-3 border-b border-subtle last:border-b-0 hover:bg-surface-secondary transition-colors;
+}
+
+/* Empty state pattern */
+.widget-empty {
+  @apply flex flex-col items-center justify-center text-center p-8 text-secondary;
+}
+
+/* Development mode notice */
+.widget-dev-notice {
+  @apply p-4 rounded-xl border border-subtle bg-surface-secondary text-center;
+}
+
+/* =============================================================================
+   Nike Widget Styles
+   ============================================================================= */
+
+.nike-widget {
+  @apply p-4 flex flex-col gap-0;
+  min-height: 200px;
+}
+
+.nike-widget--fullscreen {
+  @apply p-6;
+  min-height: 100vh;
+}
+
+/* Filter strip – horizontal scrollable chip row */
+.nike-filter-strip {
+  display: flex;
+  gap: 6px;
+  overflow-x: auto;
+  scrollbar-width: none;
+  padding-bottom: 10px;
+  margin-bottom: 4px;
+}
+.nike-filter-strip::-webkit-scrollbar {
+  display: none;
+}
+
+.nike-filter-chip {
+  @apply rounded-full border border-default bg-surface text-secondary text-xs font-medium px-3 py-1;
+  white-space: nowrap;
+  cursor: pointer;
+  transition: background-color 0.15s, color 0.15s, border-color 0.15s;
+  flex-shrink: 0;
+}
+.nike-filter-chip--active {
+  background-color: #111;
+  color: #fff;
+  border-color: #111;
+}
+
+/* Product grid */
+.nike-grid-container {
+  flex: 1;
+}
+
+.nike-product-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
+  gap: 12px;
+}
+
+/* Card image */
+.nike-card-img-wrap {
+  aspect-ratio: 16/9;
+  overflow: hidden;
+  background-color: #f5f5f5;
+}
+.nike-card-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+/* Placeholder when no image */
+.nike-card-placeholder {
+  aspect-ratio: 16/9;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.nike-no-img-label {
+  font-size: 1rem;
+  font-weight: 900;
+  letter-spacing: 0.1em;
+  opacity: 0.7;
+}
+
+/* Category chip inside card */
+.nike-category-chip {
+  display: inline-block;
+  font-size: 0.65rem;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  border-radius: 999px;
+  padding: 2px 8px;
+  width: fit-content;
+}
+
+/* Shop button inside card */
+.nike-shop-btn {
+  margin-top: 8px;
+  padding: 6px 12px;
+  border-radius: 999px;
+  background-color: #111;
+  color: #fff;
+  font-size: 0.75rem;
+  font-weight: 600;
+  border: none;
+  cursor: pointer;
+  transition: opacity 0.15s;
+  width: fit-content;
+}
+.nike-shop-btn:hover {
+  opacity: 0.8;
+}
+
+/* Inline text link */
+.nike-text-link {
+  background: none;
+  border: none;
+  padding: 0;
+  cursor: pointer;
+  font-size: 0.75rem;
+  font-weight: 500;
+  transition: opacity 0.15s;
+  text-decoration: underline;
+  text-underline-offset: 2px;
+}
+
+/* Loading spinner */
+.nike-spinner {
+  width: 28px;
+  height: 28px;
+  border: 3px solid transparent;
+  border-top-color: #111;
+  border-radius: 50%;
+  animation: nike-spin 0.7s linear infinite;
+}
+@keyframes nike-spin {
+  to { transform: rotate(360deg); }
+}

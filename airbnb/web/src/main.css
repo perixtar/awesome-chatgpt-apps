@@ -1,0 +1,83 @@
+/* =============================================================================
+   ChatGPT Apps SDK UI Styles
+
+   This file sets up the design system for your widget:
+   - Tailwind CSS v4 utilities
+   - OpenAI Apps SDK UI design tokens and component styles
+   - ChatGPT-native dark mode support
+   ============================================================================= */
+
+@import "tailwindcss";
+@import "@openai/apps-sdk-ui/css";
+
+/* Required for Tailwind to find class references in Apps SDK UI components. */
+@source "../../../node_modules/@openai/apps-sdk-ui";
+
+/* =============================================================================
+   Custom Styles (add your own below)
+   ============================================================================= */
+
+/* Widget container defaults */
+.widget-container {
+  @apply p-4 min-h-[100px];
+}
+
+/* Card pattern - use for inline display mode */
+.widget-card {
+  @apply rounded-2xl border border-default bg-surface shadow-lg p-4;
+}
+
+/* List item pattern */
+.widget-list-item {
+  @apply flex items-center gap-3 p-3 border-b border-subtle last:border-b-0 hover:bg-surface-secondary transition-colors;
+}
+
+/* Empty state pattern */
+.widget-empty {
+  @apply flex flex-col items-center justify-center text-center p-8 text-secondary;
+}
+
+/* Development mode notice */
+.widget-dev-notice {
+  @apply p-4 rounded-xl border border-subtle bg-surface-secondary text-center;
+}
+
+/* ── Airbnb listing card ── */
+.widget-listing-card {
+  @apply rounded-xl border border-default bg-surface overflow-hidden cursor-pointer transition-colors hover:bg-surface-secondary flex-shrink-0;
+  min-width: 180px;
+}
+
+/* Image area for listing card */
+.widget-listing-image {
+  @apply w-full overflow-hidden bg-surface-secondary;
+  height: 140px;
+}
+
+/* Detail view hero image */
+.widget-detail-image {
+  @apply w-full overflow-hidden bg-surface-secondary;
+  height: 220px;
+}
+
+/* Horizontal scroll carousel (inline mode) */
+.widget-listings-carousel {
+  display: flex;
+  gap: 12px;
+  overflow-x: auto;
+  padding: 0 16px 16px;
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+}
+
+.widget-listings-carousel::-webkit-scrollbar {
+  display: none;
+}
+
+/* Grid layout (fullscreen mode) */
+.widget-listings-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  gap: 16px;
+  padding: 0 16px 16px;
+}
