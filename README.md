@@ -22,13 +22,13 @@ Each project combines an MCP-style server with a web widget experience and focus
 
 ## Collection
 
-| App | Folder | Experience | Source | State | Preview |
-| --- | --- | --- | --- | --- | --- |
-| Airbnb Listings Browser | [`airbnb/`](./airbnb) | Search listings, browse cards, inspect details, and deep-link to Airbnb | [airbnb.com](https://airbnb.com) | Latest source snapshot | — |
-| Cats Article Explorer | [`cats/`](./cats) | Browse and search cat-care articles in a card-grid interface | [cats.com](https://cats.com) | Latest source snapshot | — |
-| Nike Product Browser | [`nike/`](./nike) | Explore products and collections with category filters and search | [nike.com](https://nike.com) | Ready snapshot | [Live preview](https://chatgpt-mcp-hosting.fly.dev/281d9e3b-c323-4bba-9d53-7b36c9f47785/) |
-| Starbucks Menu Browser | [`starbucks/`](./starbucks) | Discover drinks and food items with category-based browsing | [starbucks.com](https://starbucks.com) | Ready snapshot | [Live preview](https://chatgpt-mcp-hosting.fly.dev/6dfb6a4f-82b7-4950-8588-1b3fb23dfef6/) |
-| Stripe Pricing Explorer | [`stripe/`](./stripe) | Compare pricing plans, fees, and product highlights | [stripe.com](https://stripe.com) | Ready snapshot | [Live preview](https://chatgpt-mcp-hosting.fly.dev/ce4f428a-f3e3-4bfe-8044-1cbc042f46df/) |
+| App | Folder | Experience | Source | State |
+| --- | --- | --- | --- | --- |
+| Airbnb Listings Browser | [`airbnb/`](./airbnb) | Search listings, browse cards, inspect details, and deep-link to Airbnb | [airbnb.com](https://airbnb.com) | Latest source snapshot |
+| Cats Article Explorer | [`cats/`](./cats) | Browse and search cat-care articles in a card-grid interface | [cats.com](https://cats.com) | Latest source snapshot |
+| Nike Product Browser | [`nike/`](./nike) | Explore products and collections with category filters and search | [nike.com](https://nike.com) | Ready snapshot |
+| Starbucks Menu Browser | [`starbucks/`](./starbucks) | Discover drinks and food items with category-based browsing | [starbucks.com](https://starbucks.com) | Ready snapshot |
+| Stripe Pricing Explorer | [`stripe/`](./stripe) | Compare pricing plans, fees, and product highlights | [stripe.com](https://stripe.com) | Ready snapshot |
 
 ## Quick Start
 
