@@ -1,4 +1,4 @@
-# Awesome ChatGPT Apps [![Awesome](https://awesome.re/badge.svg)](https://awesome.re) [![Apps](https://img.shields.io/badge/apps-5-blue.svg)](https://github.com/perixtar/awesome-chatgpt-apps) [![Last Commit](https://img.shields.io/github/last-commit/perixtar/awesome-chatgpt-apps)](https://github.com/perixtar/awesome-chatgpt-apps/commits/main)
+# Awesome ChatGPT Apps [![Awesome](https://awesome.re/badge.svg)](https://awesome.re) [![Apps](https://img.shields.io/badge/apps-6-blue.svg)](https://github.com/perixtar/awesome-chatgpt-apps) [![Last Commit](https://img.shields.io/github/last-commit/perixtar/awesome-chatgpt-apps)](https://github.com/perixtar/awesome-chatgpt-apps/commits/main)
 
 > A curated collection of self-contained ChatGPT Apps generated with a Fly.io sandbox runner, cleaned up and organized into reusable example projects.
 
@@ -27,6 +27,7 @@ Each project combines an MCP-style server with a web widget experience and focus
 | Airbnb Listings Browser | [`airbnb/`](./airbnb) | Search listings, browse cards, inspect details, and deep-link to Airbnb | [airbnb.com](https://airbnb.com) | Latest source snapshot |
 | Cats Article Explorer | [`cats/`](./cats) | Browse and search cat-care articles in a card-grid interface | [cats.com](https://cats.com) | Latest source snapshot |
 | Nike Product Browser | [`nike/`](./nike) | Explore products and collections with category filters and search | [nike.com](https://nike.com) | Ready snapshot |
+| Spotify Music Discovery | [`spotify/`](./spotify) | Browse popular tracks by genre, view details, and deep-link to Spotify | [spotify.com](https://spotify.com) | Ready snapshot |
 | Starbucks Menu Browser | [`starbucks/`](./starbucks) | Discover drinks and food items with category-based browsing | [starbucks.com](https://starbucks.com) | Ready snapshot |
 | Stripe Pricing Explorer | [`stripe/`](./stripe) | Compare pricing plans, fees, and product highlights | [stripe.com](https://stripe.com) | Ready snapshot |
 
@@ -56,6 +57,7 @@ awesome-chatgpt-apps/
 ├── airbnb/
 ├── cats/
 ├── nike/
+├── spotify/
 ├── starbucks/
 ├── stripe/
 └── README.md
